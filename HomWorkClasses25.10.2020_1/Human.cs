@@ -38,6 +38,18 @@ namespace HomWorkClasses25._10._2020_1
             MiddleName = middleName;
             Age = age;
         }
-        public void 
+        public void AddingSharesLandPlots (int inventoryNumber, double share)
+        {
+            List<ShareLandPlot> sharesLandPlots = new List<ShareLandPlot>();
+            if (SharesLandPlots!=null)
+            {
+                sharesLandPlots = SharesLandPlots;
+            }
+            ShareLandPlot shareLandPlot = new ShareLandPlot();
+            shareLandPlot.inventoryNumber = inventoryNumber;
+            shareLandPlot.share = share;
+            sharesLandPlots.Add(shareLandPlot);
+            SharesLandPlots = sharesLandPlots;
+        }
     }
 }
