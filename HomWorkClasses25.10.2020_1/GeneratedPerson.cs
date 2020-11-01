@@ -9,7 +9,7 @@ enum Gender
 }
 namespace HomWorkClasses25._10._2020_1
 {
-    class Generated
+    class GeneratedPerson
     {
         public string Name
         {
@@ -103,6 +103,29 @@ namespace HomWorkClasses25._10._2020_1
                 string[] middleNames = { "Андреевна", "Анатольевна", "Сергеевна", "Борисовна", "Ганибаловна" };
                 MiddleName = middleNames[rnd.Next(0, middleNames.Length)];
             }
+        }
+        public void GenerateAge()
+        {
+            const int MAX_AGE = 110;
+            const int MIN_AGE = 18;
+            Random rnd = new Random();
+            Age=rnd.Next(MIN_AGE, MAX_AGE);
+        }
+        /// <summary>
+        /// Генерирует семизначный номер
+        /// </summary>
+        /// <param name="Лист сгенерированных номеров"></param>
+        public void GeneratePassportNumber(List<int> availablePassportNumbers)
+        {
+            const int MAX_PASSPORT_NUMBER = 10000000;
+            const int MIN_PASSPORT_NIMBER = 1000000;
+            Random rnd = new Random();
+            do
+            {
+                PassportNumber = rnd.Next(MIN_PASSPORT_NIMBER, MAX_PASSPORT_NUMBER);
+            }
+            while (availablePassportNumbers.Contains(PassportNumber));
+            availablePassportNumbers.Add(PassportNumber);
         }
     }
 }
