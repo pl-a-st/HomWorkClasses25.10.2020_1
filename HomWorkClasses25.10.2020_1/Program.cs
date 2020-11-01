@@ -14,9 +14,9 @@ namespace HomWorkClasses25._10._2020_1
                 " быть распределено. Выводить доли после генерации и рассчетов.");
             int inventoryNumber = 100;
             double share = 0.5;
-            Human human = new Human("Сергей", "Верин", "Сергеевич", 35);
-            human.AddingSharesLandPlots(inventoryNumber, share);
-            human.AddingSharesLandPlots(inventoryNumber, share);
+            //Human human = new Human("Сергей", "Верин", "Сергеевич", 35);
+           // human.AddingSharesLandPlots(inventoryNumber, share);
+            //human.AddingSharesLandPlots(inventoryNumber, share);
         }
     }
 }

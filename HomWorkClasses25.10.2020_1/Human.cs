@@ -23,6 +23,10 @@ namespace HomWorkClasses25._10._2020_1
         {
             get; private set;
         }
+        public int PassportNumber
+        {
+            get; private set;
+        }
         public int Age
         {
             get; private set;
@@ -31,13 +35,19 @@ namespace HomWorkClasses25._10._2020_1
         {
             get; private set;
         }
-        public Human(string name, string surname, string middleName, int age)
+        public Human(string name, string surname, string middleName,int passportNumber, int age)
         {
             Name = name;
             Surname = surname;
             MiddleName = middleName;
             Age = age;
+            PassportNumber = passportNumber;
         }
+        /// <summary>
+        /// Добавление владения долей
+        /// </summary>
+        /// <param name="inventoryNumber"></param>
+        /// <param name="share"></param>
         public void AddingSharesLandPlots (int inventoryNumber, double share)
         {
             List<ShareLandPlot> sharesLandPlots = new List<ShareLandPlot>();
