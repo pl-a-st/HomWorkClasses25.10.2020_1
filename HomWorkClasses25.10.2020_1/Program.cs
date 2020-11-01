@@ -15,8 +15,12 @@ namespace HomWorkClasses25._10._2020_1
             int inventoryNumber = 100;
             double share = 0.5;
             //Human human = new Human("Сергей", "Верин", "Сергеевич", 35);
-           // human.AddingSharesLandPlots(inventoryNumber, share);
+            // human.AddingSharesLandPlots(inventoryNumber, share);
             //human.AddingSharesLandPlots(inventoryNumber, share);
+            Generated generated = new Generated();
+            generated.GenerateName();
+            string name = generated.Name;
         }
+
     }
 }

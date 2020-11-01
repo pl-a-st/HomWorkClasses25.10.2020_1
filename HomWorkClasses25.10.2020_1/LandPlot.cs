@@ -34,8 +34,8 @@ namespace HomWorkClasses25._10._2020_1
             InventoryNumber = inventoryNumber;
         }
         public void CalculateSquare()
-           {
+        {
             Square = Length * Wight;
-            }
+        }
     }
 }
