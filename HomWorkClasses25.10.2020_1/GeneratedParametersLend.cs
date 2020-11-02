@@ -16,13 +16,20 @@ namespace HomWorkClasses25._10._2020_1
         {
             const int MAX_INVENTORY_NUMBER = 10000000;
             const int MIN_INVENTORY_NIMBER = 1000000;
+            int inventoryNumber;
             Random rnd = new Random();
             do
             {
-               return rnd.Next(MIN_INVENTORY_NIMBER, MAX_INVENTORY_NUMBER);
+                inventoryNumber = rnd.Next(MIN_INVENTORY_NIMBER, MAX_INVENTORY_NUMBER);
+                if (!availablePassportNumbers.Contains(inventoryNumber))
+                {
+                    availablePassportNumbers.Add(inventoryNumber);
+                    return inventoryNumber;
+                }
+                
             }
-            while (availablePassportNumbers.Contains(InventoryNumber));
-            availablePassportNumbers.Add(InventoryNumber);
+            while (availablePassportNumbers.Contains(inventoryNumber));
+            return 0;
         }
     }
 }

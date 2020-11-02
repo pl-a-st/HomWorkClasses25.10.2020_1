@@ -27,6 +27,11 @@ namespace HomWorkClasses25._10._2020_1
             string name = generated.Name;*/
 
         }
+        static Human CreateHumans(List<Human> humans)
+        {
+            GeneratedPerson generatedPerson = new GeneratedPerson();
+            Human human = new Human(generatedPerson.GenerateName,generatedPerson.GenerateSurname, generatedPerson.GenerateMiddleName,generatedPerson.GeneratePassportNumber(availablePassportNumbers),generatedPerson.GenerateAge()) )
+        }
 
     }
 }
