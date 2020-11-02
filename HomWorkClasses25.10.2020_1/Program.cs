@@ -18,13 +18,14 @@ namespace HomWorkClasses25._10._2020_1
             //Human human = new Human("Сергей", "Верин", "Сергеевич", 35);
             // human.AddingSharesLandPlots(inventoryNumber, share);
             //human.AddingSharesLandPlots(inventoryNumber, share);
-            GeneratedPerson generated = new GeneratedPerson();
+            /*GeneratedPerson generated = new GeneratedPerson();
             generated.GenerateName();
             List<int> availablePassportNumbers = new List<int>();
             generated.GeneratePassportNumber(availablePassportNumbers);
             generated.GeneratePassportNumber(availablePassportNumbers);
 
-            string name = generated.Name;
+            string name = generated.Name;*/
+
         }
 
     }
