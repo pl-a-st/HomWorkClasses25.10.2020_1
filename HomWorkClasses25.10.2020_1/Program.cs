@@ -50,7 +50,7 @@ namespace HomWorkClasses25._10._2020_1
                 Random rnd = new Random();
                 for (int i = 0; i< nextLandPlot.ResidentsCount-1;i++)
                 {
-                    shares[i] =Math.Round((allShares * rnd.NextDouble()),3);
+                    shares[i] =Math.Round((allShares *Math.Round(rnd.NextDouble(),3)),3);
                     allShares = allShares - shares[i];
                 }
                 shares[nextLandPlot.ResidentsCount-1] = allShares;
@@ -59,6 +59,12 @@ namespace HomWorkClasses25._10._2020_1
                    Human human= CreateAddHumanList(humans);
                    human.AddSharesLandPlots(nextLandPlot.InventoryNumber, shares[i]);
                 }
+            }
+            Console.WriteLine("");
+            foreach (Human nextHuman in humans)
+            {
+               
+                Console.WriteLine("Участок {0}, доля {1}, владелец {2} {3} {4}",nextHuman.SharesLandPlots[0].inventoryNumber, nextHuman.SharesLandPlots[0].share,nextHuman.Surname,nextHuman.Name,nextHuman.MiddleName);
             }
         }
         static void AddHumanList(List<Human> humans)
