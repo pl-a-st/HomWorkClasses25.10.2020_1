@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HomWorkClasses25._10._2020_1
 {
-    class LandPlot
+    public class LandPlot
     {
         public int Length
         {

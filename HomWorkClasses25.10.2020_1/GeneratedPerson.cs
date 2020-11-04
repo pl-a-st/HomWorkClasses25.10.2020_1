@@ -27,10 +27,6 @@ namespace HomWorkClasses25._10._2020_1
         {
             get; private set;
         }
-        public int InventoryNumber
-        {
-            get; private set;
-        }
         public Gender Gender
         {
             get; private set;
@@ -115,17 +111,40 @@ namespace HomWorkClasses25._10._2020_1
         /// Генерирует семизначный номер
         /// </summary>
         /// <param name="Лист сгенерированных номеров"></param>
-        public void GeneratePassportNumber(List<int> availablePassportNumbers)
+        public void GeneratePassportNumber(List<Human> availableHumans)
         {
             const int MAX_PASSPORT_NUMBER = 10000000;
             const int MIN_PASSPORT_NIMBER = 1000000;
             Random rnd = new Random();
+            bool passportExists = false;
             do
             {
                 PassportNumber = rnd.Next(MIN_PASSPORT_NIMBER, MAX_PASSPORT_NUMBER);
+                passportExists = false;
+                foreach (Human nextHuman in availableHumans)
+                {
+                    if (nextHuman.PassportNumber== PassportNumber)
+                    {
+                        passportExists = true;
+                    }
+                }
             }
-            while (availablePassportNumbers.Contains(PassportNumber));
-            availablePassportNumbers.Add(PassportNumber);
+            while (passportExists);
+        }
+        public void GenerateAllParametrsPerson(List<Human> availableHumans)
+        {
+            GenerateGender();
+            GenerateName();
+            GenerateSurname();
+            GenerateMiddleName();
+            GeneratePassportNumber(availableHumans);
+            GenerateAge();
+        }
+        public void AddGeneratedPersonWithParametrs(List<Human> availableHumans)
+        {
+            GenerateAllParametrsPerson(availableHumans);
+            Human human = new Human(Name,Surname,MiddleName,PassportNumber,Age);
+            availableHumans.Add(human);
         }
     }
 }

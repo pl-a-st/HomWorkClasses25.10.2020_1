@@ -13,24 +13,28 @@ namespace HomWorkClasses25._10._2020_1
                 "ширину. 1* Жители на участках имеют фамилию, имя, возраст, долю от участка. Оценить метраж каждого " +
                 "участника, относительно его долевого процента (процент генерировать), при том, что 100% участка должно" +
                 " быть распределено. Выводить доли после генерации и рассчетов.");
-            int inventoryNumber = 100;
-            double share = 0.5;
-            //Human human = new Human("Сергей", "Верин", "Сергеевич", 35);
-            // human.AddingSharesLandPlots(inventoryNumber, share);
-            //human.AddingSharesLandPlots(inventoryNumber, share);
-            /*GeneratedPerson generated = new GeneratedPerson();
-            generated.GenerateName();
-            List<int> availablePassportNumbers = new List<int>();
-            generated.GeneratePassportNumber(availablePassportNumbers);
-            generated.GeneratePassportNumber(availablePassportNumbers);
-
-            string name = generated.Name;*/
-
+            List<Human> humans = new List<Human>();
+            int humanCount = 5;
+            for (int i=0; i<humanCount; i++)
+            {
+                CreateHumans(humans);
+            }
+            List<LandPlot> landPlots = new List<LandPlot>();
+            int landPlotsCount = 5;
+            for (int i = 0; i < landPlotsCount; i++)
+            {
+                CreateLandPlots(landPlots);
+            }
         }
-        static Human CreateHumans(List<Human> humans)
+        static void CreateHumans(List<Human> humans)
         {
             GeneratedPerson generatedPerson = new GeneratedPerson();
-            Human human = new Human(generatedPerson.GenerateName,generatedPerson.GenerateSurname, generatedPerson.GenerateMiddleName,generatedPerson.GeneratePassportNumber(availablePassportNumbers),generatedPerson.GenerateAge()) )
+            generatedPerson.AddGeneratedPersonWithParametrs(humans);
+        }
+        static void CreateLandPlots (List<LandPlot> landPlots)
+        {
+            GeneratedParametersLend generatedParametersLend = new GeneratedParametersLend();
+            generatedParametersLend.AddGeneratedLandPlotWithParametrs(landPlots);
         }
 
     }

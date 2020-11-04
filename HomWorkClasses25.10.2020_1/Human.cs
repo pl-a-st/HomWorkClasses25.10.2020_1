@@ -9,7 +9,7 @@ public struct ShareLandPlot
 
 namespace HomWorkClasses25._10._2020_1
 {
-    class Human
+   public class Human
     {
         public string Name
         {
@@ -48,7 +48,7 @@ namespace HomWorkClasses25._10._2020_1
         /// </summary>
         /// <param name="inventoryNumber"></param>
         /// <param name="share"></param>
-        public void AddingSharesLandPlots (int inventoryNumber, double share)
+        public void AddSharesLandPlots (int inventoryNumber, double share)
         {
             List<ShareLandPlot> sharesLandPlots = new List<ShareLandPlot>();
             if (SharesLandPlots!=null)
