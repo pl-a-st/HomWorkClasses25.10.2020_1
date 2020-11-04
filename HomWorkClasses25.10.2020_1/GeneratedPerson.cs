@@ -146,5 +146,12 @@ namespace HomWorkClasses25._10._2020_1
             Human human = new Human(Name,Surname,MiddleName,PassportNumber,Age);
             availableHumans.Add(human);
         }
+        public Human RetunAddGeneratedPersonWithParametrs(List<Human> availableHumans)
+        {
+            GenerateAllParametrsPerson(availableHumans);
+            Human human = new Human(Name, Surname, MiddleName, PassportNumber, Age);
+            availableHumans.Add(human);
+            return human;
+        }
     }
 }

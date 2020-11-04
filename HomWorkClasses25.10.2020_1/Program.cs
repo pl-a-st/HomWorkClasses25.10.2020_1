@@ -15,11 +15,11 @@ namespace HomWorkClasses25._10._2020_1
                 " быть распределено. Выводить доли после генерации и рассчетов.");
             Console.WriteLine("");
             List<Human> humans = new List<Human>();
-            int humanCount = 5;
-            for (int i=0; i<humanCount; i++)
-            {
-                CreateHumans(humans);
-            }
+            //int humanCount = 5;
+            //for (int i=0; i<humanCount; i++)
+            //{
+            //    CreateHumans(humans);
+            //}
             List<LandPlot> landPlots = new List<LandPlot>();
             int landPlotsCount = 5;
             for (int i = 0; i < landPlotsCount; i++)
@@ -43,11 +43,34 @@ namespace HomWorkClasses25._10._2020_1
                     " квадратных метров на человека: {4}", nextLandPlot.InventoryNumber, nextLandPlot.Length, nextLandPlot.Wight,
                     nextLandPlot.ResidentsCount, nextLandPlot.CalculateAreaPerPerson());
             }
+            foreach (LandPlot nextLandPlot in landPlots)
+            {
+                double[] shares = new double[nextLandPlot.ResidentsCount];
+                double allShares = 1;
+                Random rnd = new Random();
+                for (int i = 0; i< nextLandPlot.ResidentsCount-1;i++)
+                {
+                    shares[i] =Math.Round((allShares * rnd.NextDouble()),3);
+                    allShares = allShares - shares[i];
+                }
+                shares[nextLandPlot.ResidentsCount-1] = allShares;
+                for (int i = 0; i < nextLandPlot.ResidentsCount; i++)
+                {
+                   Human human= CreateAddHumanList(humans);
+                   human.AddSharesLandPlots(nextLandPlot.InventoryNumber, shares[i]);
+                }
+            }
         }
-        static void CreateHumans(List<Human> humans)
+        static void AddHumanList(List<Human> humans)
         {
             GeneratedPerson generatedPerson = new GeneratedPerson();
             generatedPerson.AddGeneratedPersonWithParametrs(humans);
+        }
+        static Human CreateAddHumanList(List<Human> humans)
+        {
+            GeneratedPerson generatedPerson = new GeneratedPerson();
+           Human  human= generatedPerson.RetunAddGeneratedPersonWithParametrs(humans);
+            return human;
         }
         static void CreateLandPlots (List<LandPlot> landPlots)
         {
