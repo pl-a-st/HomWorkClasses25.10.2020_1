@@ -22,6 +22,10 @@ namespace HomWorkClasses25._10._2020_1
         {
             get; private set;
         }
+        public double AreaPerPerson
+        {
+            get; private set;
+        }
         public int InventoryNumber
         {
             get; private set;
@@ -36,6 +40,12 @@ namespace HomWorkClasses25._10._2020_1
         public void CalculateSquare()
         {
             Square = Length * Wight;
+        }
+        public double CalculateAreaPerPerson()
+        {
+            CalculateSquare();
+            AreaPerPerson = Square / ResidentsCount;
+            return AreaPerPerson;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace HomWorkClasses25._10._2020_1
                 "ширину. 1* Жители на участках имеют фамилию, имя, возраст, долю от участка. Оценить метраж каждого " +
                 "участника, относительно его долевого процента (процент генерировать), при том, что 100% участка должно" +
                 " быть распределено. Выводить доли после генерации и рассчетов.");
+            Console.WriteLine("");
             List<Human> humans = new List<Human>();
             int humanCount = 5;
             for (int i=0; i<humanCount; i++)
@@ -34,6 +35,13 @@ namespace HomWorkClasses25._10._2020_1
                     mostSquareLandPlot = nextLandPlot;
                     differenceeLngthHeight = Math.Abs(nextLandPlot.Length - nextLandPlot.Wight);
                 }
+            }
+            Console.WriteLine("Самый квадрантый участок: {0}", mostSquareLandPlot.InventoryNumber);
+            foreach (LandPlot nextLandPlot in landPlots)
+            {
+                Console.WriteLine("Участок {0} длина: {1}, ширина: {2}, количество жителей: {3}," +
+                    " квадратных метров на человека: {4}", nextLandPlot.InventoryNumber, nextLandPlot.Length, nextLandPlot.Wight,
+                    nextLandPlot.ResidentsCount, nextLandPlot.CalculateAreaPerPerson());
             }
         }
         static void CreateHumans(List<Human> humans)
