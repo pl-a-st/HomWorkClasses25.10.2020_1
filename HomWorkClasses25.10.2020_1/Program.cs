@@ -25,6 +25,16 @@ namespace HomWorkClasses25._10._2020_1
             {
                 CreateLandPlots(landPlots);
             }
+            LandPlot mostSquareLandPlot = landPlots[0];
+            int differenceeLngthHeight = Math.Abs(landPlots[0].Length - landPlots[0].Wight);
+            foreach (LandPlot nextLandPlot in landPlots)
+            {
+                if (Math.Abs(nextLandPlot.Length - nextLandPlot.Wight)<differenceeLngthHeight)
+                {
+                    mostSquareLandPlot = nextLandPlot;
+                    differenceeLngthHeight = Math.Abs(nextLandPlot.Length - nextLandPlot.Wight);
+                }
+            }
         }
         static void CreateHumans(List<Human> humans)
         {
