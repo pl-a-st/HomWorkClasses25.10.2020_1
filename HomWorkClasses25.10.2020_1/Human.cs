@@ -5,6 +5,7 @@ public struct ShareLandPlot
 {
     public int inventoryNumber;
     public double share;
+    public double areaShareLandPlot;
 }
 
 namespace HomWorkClasses25._10._2020_1
@@ -48,7 +49,7 @@ namespace HomWorkClasses25._10._2020_1
         /// </summary>
         /// <param name="inventoryNumber"></param>
         /// <param name="share"></param>
-        public void AddSharesLandPlots (int inventoryNumber, double share)
+        public void AddSharesLandPlots (int inventoryNumber, double share, double areaShareLandPlot)
         {
             List<ShareLandPlot> sharesLandPlots = new List<ShareLandPlot>();
             if (SharesLandPlots!=null)
@@ -58,8 +59,10 @@ namespace HomWorkClasses25._10._2020_1
             ShareLandPlot shareLandPlot = new ShareLandPlot();
             shareLandPlot.inventoryNumber = inventoryNumber;
             shareLandPlot.share = share;
+            shareLandPlot.areaShareLandPlot = areaShareLandPlot;
             sharesLandPlots.Add(shareLandPlot);
             SharesLandPlots = sharesLandPlots;
+            
         }
     }
 }

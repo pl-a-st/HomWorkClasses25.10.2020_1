@@ -47,5 +47,11 @@ namespace HomWorkClasses25._10._2020_1
             AreaPerPerson = Square / ResidentsCount;
             return AreaPerPerson;
         }
+        public double CalculateAreaShareLandPlot(double share)
+        {
+            CalculateSquare();
+            return Square*share;
+             
+        }
     }
 }

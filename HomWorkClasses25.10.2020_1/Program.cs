@@ -57,14 +57,14 @@ namespace HomWorkClasses25._10._2020_1
                 for (int i = 0; i < nextLandPlot.ResidentsCount; i++)
                 {
                    Human human= CreateAddHumanList(humans);
-                   human.AddSharesLandPlots(nextLandPlot.InventoryNumber, shares[i]);
+                   human.AddSharesLandPlots(nextLandPlot.InventoryNumber, shares[i],nextLandPlot.CalculateAreaShareLandPlot(shares[i]));
                 }
             }
             Console.WriteLine("");
             foreach (Human nextHuman in humans)
             {
                
-                Console.WriteLine("Участок {0}, доля {1}, владелец {2} {3} {4}",nextHuman.SharesLandPlots[0].inventoryNumber, nextHuman.SharesLandPlots[0].share,nextHuman.Surname,nextHuman.Name,nextHuman.MiddleName);
+                Console.WriteLine("Участок {0} доля {1} метраж {5} владелец {2} {3} {4}",nextHuman.SharesLandPlots[0].inventoryNumber, Math.Round(nextHuman.SharesLandPlots[0].share,3),nextHuman.Surname,nextHuman.Name,nextHuman.MiddleName, Math.Round(nextHuman.SharesLandPlots[0].areaShareLandPlot,0));
             }
         }
         static void AddHumanList(List<Human> humans)
