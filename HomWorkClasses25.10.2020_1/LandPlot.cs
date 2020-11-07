@@ -44,7 +44,7 @@ namespace HomWorkClasses25._10._2020_1
         public double CalculateAreaPerPerson()
         {
             CalculateSquare();
-            AreaPerPerson = Square / ResidentsCount;
+            AreaPerPerson = Convert.ToDouble(Square) / ResidentsCount;
             return AreaPerPerson;
         }
         public double CalculateAreaShareLandPlot(double share)
